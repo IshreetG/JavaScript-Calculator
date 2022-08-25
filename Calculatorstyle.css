@@ -1,0 +1,81 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: "Big Caslon", "Courier New", sans-serif;
+    font-weight: normal;
+    border-radius: 50px; /* this makes the buttons round */
+
+  }
+
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, rgb(183, 147, 255), rgb(113, 6, 235));
+    }
+    
+    #intro { /*title*/
+    font-size: 2.5rem;
+    color: white;
+    background-color: #d7b7ff;
+    text-align: center;
+
+    }
+    
+
+    .cal-grid { 
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh; 
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+
+
+        /* this below is for the border around the calculator */
+        width: max-content;
+        border: 10px solid white; 
+        margin-top: 50px;       
+        }
+
+        .cal-grid > button {
+            cursor: pointer;
+            font-size: 2rem;
+            border: 1px, solid #000000;
+            outline: none;
+            background-color: rbga(255, 255, 255, 0.75);
+          }
+
+            .cal-grid > button:hover { /* this is for when we hover on the button, and the colour change in the buttons */
+                background-color: #8a60ff;
+              }
+        
+              .operation { /* this is for the AC and '=' button */ 
+                grid-column: span 2;
+                color: #d27ef4;
+                background-color: rgba(255, 255, 255, 0.439);
+              }
+        
+              .output{
+                grid-column: 1 / -1;
+                background-color: rgba(255, 255, 255, 0.75);
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                flex-direction: row;
+                padding: 70px;
+        
+              }
+        
+              .output .previous-operand{ /* the inital number */
+                color: rgb(0, 0, 0);
+                font-size: 1.5rem;
+              }
+        
+              .output .current-operand{ /* the second number */
+                color: rgb(0, 0, 0);
+                font-size: 1.5rem;
+              }
